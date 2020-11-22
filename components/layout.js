@@ -27,6 +27,7 @@ export default function Layout({ children, home }) {
       <header className={styles.header}>
         {home ? (
           //ページがhomeだった場合に表示したい内容
+          //三項演算子の利用　条件式 ? trueの処理 : falseの処理
           <>
             <img
               src="/images/profile.jpg"
@@ -55,14 +56,13 @@ export default function Layout({ children, home }) {
           )}
       </header>
       <main>{children}</main>
-      {/* {!home && (
-        //もしページがhomeではなかったら、<a>← Back to home</a>を配置しておくということ
+      {!home && (
         <div className={styles.backToHome}>
           <Link href="/">
             <a>← Back to home</a>
           </Link>
         </div>
-      )} */}
+      )}
     </div>
   )
 }
